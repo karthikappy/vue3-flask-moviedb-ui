@@ -26,4 +26,8 @@ flask run --port=5001 --debug
 
 ### Vue.js
 
-TBC
+Switch to the client directory and run the following commands:
+```
+npm install
+npm run dev
+```
