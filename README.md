@@ -16,6 +16,13 @@ python -m venv env
 pip install -r requirements.txt
 ```
 
+You will then need to obtain an API key for The Movie Database (TMDB).
+Create a ```.env``` with the following contents:
+```
+TMDB_API_KEY=<your-key>
+```
+Be sure to replace ```<your_key>``` with your own API key.
+
 ## Running the project
 
 ### Flask server
