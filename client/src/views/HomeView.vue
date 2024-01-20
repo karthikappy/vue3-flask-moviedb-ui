@@ -1,5 +1,4 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
 import PosterGrid from '../components/PosterGrid.vue'
 </script>
 
