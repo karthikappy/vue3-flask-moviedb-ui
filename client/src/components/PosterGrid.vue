@@ -6,7 +6,7 @@ import { reactive } from 'vue'
 const apiData = reactive({})
 
 onMounted(() => {
-    fetch('http://127.0.0.1:5000/api/' + props.target)
+    fetch('api/' + props.target)
         .then(response => response.json())
         .then(data => {
             apiData.data = data;
