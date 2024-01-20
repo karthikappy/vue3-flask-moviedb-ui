@@ -4,10 +4,7 @@ import PosterGrid from '../components/PosterGrid.vue'
 
 <template>
   <main>
-    <PosterGrid type="tv" target="toprated-tv" title="Top Rated TV"/>
-    <PosterGrid type="tv" target="popular-tv" title="Popular TV"/>
-    <PosterGrid type="movie" target="toprated-movies" title="Top Rated Movies"/>
-    <PosterGrid type="movie" target="popular-movies" title="Popular Movies"/>
+    <PosterGrid type="movie" target="movie/released_last_14days" title="Popular Hollywood movies in the last 2 weeks"/>
     
   </main>
 </template>
