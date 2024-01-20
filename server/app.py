@@ -1,4 +1,7 @@
-from flask import Flask, jsonify
+import mimetypes
+mimetypes.add_type('application/javascript', '.js')
+mimetypes.add_type('text/css', '.css')
+from flask import Flask, jsonify, render_template, send_from_directory
 from flask_cors import CORS
 import requests
 from dotenv import load_dotenv
@@ -26,6 +29,18 @@ def get_api_content(url):
 @app.route('/ping', methods=['GET'])
 def ping_pong():
     return jsonify('pong!')
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(app.static_folder + '/' + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
+
+@app.route("/main")
+def mn():
+    return render_template("index.html")
 
 @app.route('/api/toprated-tv')
 def get_toprated_tv(): return get_api_content(TMDB_BASE_URI + "/tv/top_rated?api_key=" + os.getenv("TMDB_API_KEY"))
