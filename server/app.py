@@ -71,5 +71,11 @@ def get_movies_released14days():
          
     )
 
+@app.route("/api/movie/details/<id>")
+def get_movie_details(id):
+    return get_api_content(
+        TMDB_BASE_URI + "/movie/" + id + "?api_key=" + os.getenv("TMDB_API_KEY") + "&"
+    )
+
 if __name__ == '__main__':
     app.run()
