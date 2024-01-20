@@ -1,7 +1,9 @@
 <script setup>
-const props = defineProps(["target", "title"])
+const props = defineProps(["type", "target", "title"])
 import { onMounted } from 'vue';
 import { reactive } from 'vue'
+import TVPosterCard from './TVPosterCard.vue';
+import MoviePosterCard from './MoviePosterCard.vue';
 
 const apiData = reactive({})
 
@@ -18,13 +20,9 @@ onMounted(() => {
         <div class="card-body">
             <h5 class="card-title">{{ title }}</h5>
             <div class="row">
-                <div class="col-md-2" v-for="item in apiData.data.results">
-                    <div class="card" style="width: 150px;">
-                        <img :src="'http://image.tmdb.org/t/p/w154' + item.poster_path" alt="" class="card-img top" width="92">
-                        <div class="card-body">
-                            <p class="card-text">{{ item.name }}</p>
-                        </div>
-                    </div>
+                <div class="col-md-2" v-for="item in apiData.data.results" :key="item.id">
+                    <TVPosterCard v-if="type=='tv'" :item="item"/>
+                    <MoviePosterCard v-if="type=='movie'" :item="item"/>
                 </div>
             </div>
         </div>
