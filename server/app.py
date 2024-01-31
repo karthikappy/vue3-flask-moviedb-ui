@@ -32,13 +32,13 @@ def get_api_content(url):
 def ping_pong():
     return jsonify('pong!')
 
-@app.route('/', defaults={'path': ''})
+""" @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
     if path != "" and os.path.exists(app.static_folder + '/' + path):
         return send_from_directory(app.static_folder, path)
     else:
-        return send_from_directory(app.static_folder, 'index.html')
+        return send_from_directory(app.static_folder, 'index.html') """
 
 @app.route("/main")
 def mn():
@@ -66,9 +66,21 @@ def get_movies_released14days():
         "language=en-US&" +
         "page=1&" +
         "release_date.gte=" + daysAgo14Str + "&" +
-        "release_date.gte=" + todayStr + "&" +
+        "release_date.lte=" + todayStr + "&" +
         "region=us"
          
+    )
+
+@app.route("/api/<type>/popular/<year>")
+def get_movies_releasedyear(type, year):
+    return get_api_content(
+        TMDB_BASE_URI + "/discover/"+type+"?api_key=" + os.getenv("TMDB_API_KEY") + "&" +
+        "sort_by=popularity.desc&" +
+        "language=en-US&" +
+        "page=1&" +
+        "release_date.gte="+year+"-01-01&" +
+        "release_date.lte="+year+"-12-31&" +
+        "region=us"
     )
 
 @app.route("/api/movie/details/<id>")
