@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import MovieView from '../views/MovieView.vue'
-import PosterGridView from '../views/MoviePosterGridView.vue'
+import PosterGridView from '../views/PosterGridView.vue'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
