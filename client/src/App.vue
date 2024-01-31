@@ -25,8 +25,8 @@ const route = useRoute()
                 TV
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">2024 Releases</a></li>
-                <li><a class="dropdown-item" href="#">2023 Releases</a></li>
+                <li><a class="dropdown-item" href="#/tv/popular/2024">2024 Releases</a></li>
+                <li><a class="dropdown-item" href="#/tv/popular/2023">2023 Releases</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Now Playing</a></li>
                 <li><a class="dropdown-item" href="#">Popular</a></li>
@@ -39,8 +39,8 @@ const route = useRoute()
                 Movies
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">2024 Releases</a></li>
-                <li><a class="dropdown-item" href="#">2023 Releases</a></li>
+                <li><a class="dropdown-item" href="#/movie/popular/2024">2024 Releases</a></li>
+                <li><a class="dropdown-item" href="#/movie/popular/2023">2023 Releases</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Now Playing</a></li>
                 <li><a class="dropdown-item" href="#">Popular</a></li>
