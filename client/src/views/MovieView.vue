@@ -28,8 +28,21 @@ onMounted(() => {
                                 {{ movieInfo.title }}
                                 <span v-if="movieInfo.title != movieInfo.original_title">({{ movieInfo.original_title }})</span>
                             </h1>
-                            <p class="card-text">{{ movieInfo.tagline }}</p>
+                            <p class="card-subtitle">{{ movieInfo.tagline }}</p>
+                            <p class="card-text" v-if="movieInfo.genres">{{ movieInfo.genres.map(obj => obj.name).join(', ') }}</p>
+                            <p class="card-text">Runtime: {{ movieInfo.runtime }} minutes</p>
+                            <p class="card-text">Release Date: {{ movieInfo.release_date }}</p>
                             <p class="card-text">{{ movieInfo.overview }}</p>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Budget</h5>
+                                            <p class="card-text">{{movieInfo.budget}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -42,5 +55,8 @@ onMounted(() => {
     opacity: 0.5;
     color: black;
     background-size: cover;
+}
+.card-subtitle {
+    font-style: italic;
 }
 </style>
