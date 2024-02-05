@@ -66,8 +66,8 @@ def get_movies_released14days():
         "language=en-US&" +
         "page=1&" +
         "release_date.gte=" + daysAgo14Str + "&" +
-        "release_date.lte=" + todayStr + "&" +
-        "region=us"
+        "release_date.lte=" + todayStr #+ "&" +
+        #"region=us"
          
     )
 
@@ -79,8 +79,8 @@ def get_movies_releasedyear(type, year):
         "language=en-US&" +
         "page=1&" +
         "release_date.gte="+year+"-01-01&" +
-        "release_date.lte="+year+"-12-31&" +
-        "region=us"
+        "release_date.lte="+year+"-12-31&" #+
+        #"region=us"
     )
 
 @app.route("/api/movie/details/<id>")
