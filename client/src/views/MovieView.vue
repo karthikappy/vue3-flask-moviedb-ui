@@ -43,6 +43,16 @@ onMounted(() => {
                                     </div>
                                 </div>
                             </div>
+                            <div class="row" v-if="movieInfo.belongs_to_collection ">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-bosy">
+                                            <h5 class="card-title">{{ movieInfo.belongs_to_collection.name }}</h5>
+                                            <p class="card-text"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
