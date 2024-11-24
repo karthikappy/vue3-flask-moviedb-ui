@@ -10,7 +10,7 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "server/app.py",
+                "FLASK_APP": "backend/app.py",
                 "FLASK_DEBUG": "1"
             },
             "args": [
@@ -33,7 +33,7 @@
                 "<node_internals>/**"
             ],
             "type": "node",
-            "cwd": "${workspaceFolder}\\client",
+            "cwd": "${workspaceFolder}\\frontend",
             "console": "integratedTerminal"
         }
     ],
