@@ -23,7 +23,7 @@ onMounted(() => {
                 <v-carousel hide-delimiters>
                     <v-carousel-item 
                         v-for="item in apiData.results" :key="item.id"
-                        :src="'http://image.tmdb.org/t/p/w780' + item.backdrop_path"
+                        :src="'http://image.tmdb.org/t/p/w1280' + item.backdrop_path"
                         cover
                     >
                         <v-card style="position: absolute;bottom:0px;left:0px;width:100%;background-color:rgba(0, 0, 0, 0.5);">
