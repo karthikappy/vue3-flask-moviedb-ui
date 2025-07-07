@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import MovieView from '../views/MovieView.vue'
 import PosterGridView from '../views/PosterGridView.vue'
+import SearchView from '@/views/SearchView.vue'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
@@ -32,6 +33,12 @@ const router = createRouter({
       path: '/movie/:id',
       name: 'movie',
       component: MovieView
+    },
+    
+    {
+      path: '/search/:query',
+      name: 'search',
+      component: SearchView
     },
     
   ]

@@ -83,6 +83,15 @@ def get_movies_releasedyear(type, year):
         #"region=us"
     )
 
+@app.route("/api/search/<title>")
+def search_movie(title):
+    return get_api_content(
+        TMDB_BASE_URI + "/search/multi?api_key=" + os.getenv("TMDB_API_KEY") + "&" +
+        "query=" + title.replace(" ", "+") + "&" +
+        "include_adult=false&" +
+        "language=en-US"
+    )
+
 @app.route("/api/movie/details/<id>")
 def get_movie_details(id):
     return get_api_content(

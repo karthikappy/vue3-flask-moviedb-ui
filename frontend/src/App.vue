@@ -1,10 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { ref } from 'vue'
 //import HelloWorld from './components/HelloWorld.vue'
 
 import { useRoute } from 'vue-router'
 
+const searchQuery = ref('')
 const route = useRoute()
+
+const doSearch = (event) => {
+  if (searchQuery.value.trim()) {
+    // Redirect to the search results page
+    window.location.href = `#/search/${encodeURIComponent(searchQuery.value)}`
+  }
+}
 </script>
 
 <template>
@@ -50,10 +59,10 @@ const route = useRoute()
                   </ul>
                 </li>
               </ul>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+              
+                <input class="form-control me-2" v-model="searchQuery" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" v-on:click="doSearch">Search</button>
+              
             </div>
           </div>
         </nav>
