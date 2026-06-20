@@ -12,14 +12,13 @@
     "@mdi/font": "^7.4.47",
     "client": "file:",
     "pinia": "^3.0.4",
-    "vue": "^3.5.13",
-    "vue-router": "^4.2.5",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1",
     "vuetify": "^3.8.10"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.3",
+    "@vitejs/plugin-vue": "^6.0.0",
     "sass": "^1.70.0",
-    "vite": "^6.4.2",
-    "vite-plugin-vue-devtools": "^7.7.2"
+    "vite": "^7.0.0"
   }
 }
