@@ -11,10 +11,10 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "client": "file:",
+    "pinia": "^3.0.4",
     "vue": "^3.5.13",
     "vue-router": "^4.2.5",
-    "vuetify": "^3.8.10",
-    "vuex": "^4.0.2"
+    "vuetify": "^3.8.10"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",
